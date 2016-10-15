@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta charset=utf-8 />
+  <title>THREEDEE | Mapbox</title>
+  <link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  #threed {
+    position: absolute;
+    z-index: 99;
+    font-size: 3em;
+    top: 20px;
+    left: 20px;
+    padding: 20px;
+    border: 2px solid black;
+  }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <div id="threed" class="button quiet">✨3D✨</div>
+  <script>
+  //default token
+  mapboxgl.accessToken = 'pk.eyJ1IjoibW9sbHltZXJwIiwiYSI6ImNpazdqbGtiZTAxbGNocm0ybXJ3MnNzOHAifQ.5_kJrEENbBWtqTZEv7g1-w';
+
+  var map = new mapboxgl.Map({
+    style: 'mapbox://styles/mapbox/light-v9',
+    center: [-74, 40.7],
+    zoom: 12,
+    container: 'map'
+  })
+
+  document.getElementById('threed').addEventListener('click', () => {
+    map.getPitch() === 0 ? setBuildings() : removeBuildings();
+  });
+
+  function setBuildings() {
+    map.easeTo({
+      pitch: 60,
+      zoom: 15
+    });
+ 
+
+  function removeBuildings() {
+    map.easeTo({
+      pitch: 0
+    });
+    // map.removeLayer('3d-buildings');
+  }
+  </script>
+</body>
+
+</html>
+
+<!--    map.addLayer({
+      "id": "3d-buildings",
+      "source": "composite",
+      "source-layer": "building",
+      "filter": ["==", "extrude", "true"],
+      "type": "fill",
+      "minzoom": 15,
+      "paint": {
+        "fill-color": {
+          "property": "height",
+          "stops": [
+            [0, 'yellow'],
+            [150, 'purple'],
+            [400, 'orange']
+          ]
+        },
+        "fill-extrude-height": {
+          "type": "identity",
+          "property": "height"
+        },
+        "fill-extrude-base": {
+          "type": "identity",
+          "property": "min_height"
+        },
+        "fill-opacity": .6
+      },
+      "interactive": true
+    });
+  } -->
