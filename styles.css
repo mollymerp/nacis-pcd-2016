@@ -1,11 +1,15 @@
 body {
   font-family: 'Rubik', sans-serif;
-  letter-spacing:-5px;
+  letter-spacing:-2px;
   background-size:100%;
   color: #322133;
   margin: 0;
   padding:0;
   font-weight:300;
+}
+
+pre code {
+  font-family: 'Fira Mono', monospace;
 }
 
 h1, h2, h3, p {

@@ -4,15 +4,23 @@
 <title>Foo</title>
 <meta charset='utf-8' />
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<link rel="stylesheet" href="lib/atom-highlight.css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Mono|Rubik:300,400" rel="stylesheet">
+<script src="lib/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <style type='text/css'>
 body {
   font-family: 'Rubik', sans-serif;
-  letter-spacing:-5px;
+  letter-spacing:-2px;
   background-size:100%;
   color: #322133;
   margin: 0;
   padding:0;
   font-weight:300;
+}
+
+pre code {
+  font-family: 'Fira Mono', monospace;
 }
 
 h1, h2, h3, p {
@@ -25,7 +33,7 @@ h1, h2, h3 {
 
 em, a {
   font-style:normal;
-  color:#FFC719;
+  color:#1B121C;
 }
 
 ul {
@@ -113,8 +121,12 @@ window.onload = function() {
     go(cur);
 };
 </script></head><body>
-<div><link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,700" rel="stylesheet">
-
+<div><!-- 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Mono|Rubik:300,400" rel="stylesheet">
+<script src="lib/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+-->
 <p>Hi! </p>
 </div>
 <div><p>I&#39;m Molly</p>
@@ -127,17 +139,55 @@ window.onload = function() {
 </div>
 <div><h1 id="mapbox-gl">Mapbox GL</h1>
 <ul>
-<li>⚡️ <code>vector tiles + style.json + 💻 | 📱= 🗺</code></li>
+<li>⚡️ vector tiles + style.json + 💻 | 📱= 🗺</li>
 <li>⚡️ fast, customizable, cross-platform</li>
 <li>⚡️ run-time styling</li>
 </ul>
 </div>
-<div><h1 id="data-driven-styling-_aka_-property-functions">Data driven styling <em>aka</em> Property functions</h1>
+<div><h1 id="data-driven-styling-_aka_-property-functions-_aka_-zoom-and-property-functions">Data driven styling <em>aka</em> property functions <em>aka</em> zoom-and-property functions</h1>
 <ul>
 <li>✨ use data in your vector tiles or GeoJSON</li>
 <li>✨ style many different features in the same layer</li>
 <li>✨ fewer layers 👉 more efficient rendering </li>
 </ul>
+</div>
+<div><h1 id="property-function-looks-like-this-">Property function looks like this 👇</h1>
+<pre><code class="lang-js">{
+  &quot;circle-radius&quot;: {
+    &quot;stops&quot;: [
+
+      /* zoom is 5 -&gt; circle radius will be 1px */
+      [5, 1],
+
+      /* zoom is 10 -&gt; circle radius will be 2px */
+      [10, 2]
+    ]
+  }
+}
+</code></pre>
+</div>
+<div><h1 id="zoom-and-property-function-looks-like-this-">Zoom-and-property function looks like this 👇</h1>
+<pre><code class="lang-js">{
+  &quot;circle-radius&quot;: {
+    &quot;property&quot;: &quot;rating&quot;,
+    &quot;stops&quot;: [
+
+      // zoom is 0 and &quot;rating&quot; is 0 -&gt; circle radius will be 0px
+      [{zoom: 0, value: 0}, 0],
+
+      // zoom is 0 and &quot;rating&quot; is 5 -&gt; circle radius will be 5px
+      [{zoom: 0, value: 5}, 5],
+
+      // zoom is 20 and &quot;rating&quot; is 0 -&gt; circle radius will be 0px
+      [{zoom: 20, value: 0}, 0],
+
+      // zoom is 20 and &quot;rating&quot; is 5 -&gt; circle radius will be 20px
+      [{zoom: 20, value: 5}, 20]
+
+    ]
+  }
+}
+</code></pre>
 </div>
 <div><h1 id="contribute-">Contribute!</h1>
 <ul>
