@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta charset=utf-8 />
+    <title>DDS Map Design | Mapbox</title>
+    <link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    #data {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div id="data">
+        <div class="button" id="2010 Census">2010 Census</div>
+        <div class="button" id="2015 estimate">2015 Estimate</div>
+    </div>
+    <script>
+    //default token
+    mapboxgl.accessToken = 'pk.eyJ1IjoibW9sbHltZXJwIiwiYSI6ImNpazdqbGtiZTAxbGNocm0ybXJ3MnNzOHAifQ.5_kJrEENbBWtqTZEv7g1-w';
+
+    var map = new mapboxgl.Map({
+        style: './style.json',
+        container: 'map',
+        center: [-94.425, 39.207],
+        zoom: 3.5
+    });
+
+    map.on('load', function() {
+        map.addSource('cities', {
+                type: 'geojson',
+                data: "./data/cities.geojson"
+            })
+            .addLayer({
+                id: 'cities',
+                source: 'cities',
+                type: 'circle',
+                paint: {
+                    'circle-radius': 10,
+                    'circle-color': 'red',
+                    'circle-opacity': .6
+                }
+            });
+    });
+
+
+
+
+
+
+
+
+    document.getElementById('2010 Census').addEventListener('click', function(e) {
+        map.setPaintProperty('cities', 'circle-radius', {
+            'property': '2010 Census',
+            'stops': [
+                [100000, 5],
+                [9000000, 40]
+            ]
+        });
+        map.setPaintProperty('cities', 'circle-color', 'red');
+
+    });
+    document.getElementById('2015 estimate').addEventListener('click', function(e) {
+        map.setPaintProperty('cities', 'circle-radius', {
+            'property': '2015 estimate',
+            'stops': [
+                [100000, 5],
+                [9000000, 40]
+            ]
+        });
+
+        map.setPaintProperty('cities', 'circle-color', 'blue');
+    });
+    </script>
+</body>
+
+</html>
+<!-- 
+#f2f0f7
+#cbc9e2
+#9e9ac8
+#6a51a3 
+-->
+<!-- { property: '2010 Census', type: 'interval', stops: [ [0, '#f2f0f7'], [100000, '#cbc9e2'], [500000, '#9e9ac8'], [1000000, '#6a51a3'] ] } -->
+<!-- { 'property': '2010 Census', 'stops': [ [100000, 5], [9000000, 40] ] } -->

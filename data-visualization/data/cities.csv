@@ -1,0 +1,101 @@
+2015 rank,City,State,2015 estimate,2010 Census,Change
+1,New York,New York,8550405,8175133,+4.59%
+2,Los Angeles,California,3971883,3792621,+4.73%
+3,Chicago,Illinois,2720546,2695598,+0.93%
+4,Houston,Texas,2296224,2100263,+9.33%
+5,Philadelphia,Pennsylvania,1567442,1526006,+2.72%
+6,Phoenix,Arizona,1563025,1445632,+8.12%
+7,San Antonio,Texas,1469845,1327407,+10.73%
+8,San Diego,California,1394928,1307402,+6.69%
+9,Dallas,Texas,1300092,1197816,+8.54%
+10,San Jose,California,1026908,945942,+8.56%
+11,Austin,Texas,931830,790390,+17.89%
+12,Jacksonville,Florida,868031,821784,+5.63%
+13,San Francisco,California,864816,805235,+7.40%
+14,Indianapolis,Indiana,853173,820445,+3.99%
+15,Columbus,Ohio,850106,787033,+8.01%
+16,Fort Worth,Texas,833319,741206,+12.43%
+17,Charlotte,North Carolina,827097,731424,+13.08%
+18,Seattle,Washington,684451,608660,+12.45%
+19,Denver,Colorado,682545,600158,+13.73%
+20,El Paso,Texas,681124,649121,+4.93%
+21,Detroit,Michigan,677116,713777,-5.14%
+22,Washington,District of Columbia,672228,601723,+11.72%
+23,Boston,Massachusetts,667137,617594,+8.02%
+24,Memphis,Tennessee,655770,646889,+1.37%
+25,Nashville,Tennessee,654610,601222,+8.88%
+26,Portland,Oregon,632309,583776,+8.31%
+27,Oklahoma City,Oklahoma,631346,579999,+8.85%
+28,Las Vegas,Nevada,623747,583756,+6.85%
+29,Baltimore,Maryland,621849,620961,+0.14%
+30,Louisville,Kentucky,615366,597337,+3.02%
+31,Milwaukee,Wisconsin,600155,594833,+0.89%
+32,Albuquerque,New Mexico,559121,545852,+2.43%
+33,Tucson,Arizona,531641,520116,+2.22%
+34,Fresno,California,520052,494665,+5.13%
+35,Sacramento,California,490712,466488,+5.19%
+36,Kansas City,Missouri,475378,459787,+3.39%
+37,Long Beach,California,474140,462257,+2.57%
+38,Mesa,Arizona,471825,439041,+7.47%
+39,Atlanta,Georgia,463878,420003,+10.45%
+40,Colorado Springs,Colorado,456568,416427,+9.64%
+41,Virginia Beach,Virginia,452745,437994,+3.37%
+42,Raleigh,North Carolina,451066,403892,+11.68%
+43,Omaha,Nebraska,443885,408958,+8.54%
+44,Miami,Florida,441003,399457,+10.40%
+45,Oakland,California,419267,390724,+7.31%
+46,Minneapolis,Minnesota,410939,382578,+7.41%
+47,Tulsa,Oklahoma,403505,391906,+2.96%
+48,Wichita,Kansas,389965,382368,+1.99%
+49,New Orleans,Louisiana,389617,343829,+13.32%
+50,Arlington,Texas,388125,365438,+6.21%
+51,Cleveland,Ohio,388072,396815,-2.2%
+52,Bakersfield,California,373640,347483,+7.53%
+53,Tampa,Florida,369075,335709,+9.94%
+54,Aurora,Colorado,359407,325078,+10.56%
+55,Honolulu,Hawai'i,352769,337256,+4.60%
+56,Anaheim,California,350742,336265,+4.31%
+57,Santa Ana,California,335400,324528,+3.35%
+58,Corpus Christi,Texas,324074,305215,+6.18%
+59,Riverside,California,322424,303871,+6.11%
+60,St. Louis,Missouri,315685,319294,-1.13%
+61,Lexington,Kentucky,314488,295803,+6.32%
+62,Stockton,California,305658,291707,+4.78%
+63,Pittsburgh,Pennsylvania,304391,305704,-0.43%
+64,Saint Paul,Minnesota,300851,285068,+5.54%
+65,Anchorage,Alaska,298695,291826,+2.35%
+66,Cincinnati,Ohio,298550,296943,+0.54%
+67,Henderson,Nevada,285667,257729,+10.84%
+68,Greensboro,North Carolina,285342,269666,+5.81%
+69,Plano,Texas,283558,259841,+9.13%
+70,Newark,New Jersey,281944,277140,+1.73%
+71,Toledo,Ohio,279789,287208,-2.58%
+72,Lincoln,Nebraska,277348,258379,+7.34%
+73,Orlando,Florida,270934,238300,+13.69%
+74,Chula Vista,California,265757,243916,+8.95%
+75,Jersey City,New Jersey,264290,247597,+6.74%
+76,Chandler,Arizona,260828,236123,+10.46%
+77,Fort Wayne,Indiana,260326,253691,+2.62%
+78,Buffalo,New York,258071,261310,-1.24%
+79,Durham,North Carolina,257636,228330,+12.83%
+80,St. Petersburg,Florida,257083,244769,+5.03%
+81,Irvine,California,256927,212375,+20.98%
+82,Laredo,Texas,255473,236091,+8.21%
+83,Lubbock,Texas,249042,229573,+8.48%
+84,Madison,Wisconsin,248951,233209,+6.75%
+85,Gilbert,Arizona,247542,208453,+18.75%
+86,Norfolk,Virginia,246393,242803,+1.48%
+87,Reno,Nevada,241445,225221,+7.20%
+88,Winston–Salem,North Carolina,241218,229617,+5.05%
+89,Glendale,Arizona,240126,226721,+5.91%
+90,Hialeah,Florida,237069,224669,+5.52%
+91,Garland,Texas,236897,226876,+4.42%
+92,Scottsdale,Arizona,236839,217385,+8.95%
+93,Irving,Texas,236607,216290,+9.39%
+94,Chesapeake,Virginia,235429,222209,+5.95%
+95,North Las Vegas,Nevada,234807,216961,+8.23%
+96,Fremont,California,232206,214089,+8.46%
+97,Baton Rouge,Louisiana,228590,229493,-0.39%
+98,Richmond,Virginia,220289,204214,+7.87%
+99,Boise,Idaho,218281,205671,+6.13%
+100,San Bernardino,California,216108,209924,+2.95%

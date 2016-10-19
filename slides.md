@@ -9,10 +9,6 @@ Hi!
 
 ---
 
-I'm Molly
-
----
-
 - 🐧 @mollymerp
 - 👾 [github.com/mollymerp](https://www.github.com/mollymerp)
 - 📝 molly@mapbox.com
@@ -30,30 +26,32 @@ I'm Molly
 # Data driven styling _aka_ property functions _aka_ zoom-and-property functions
 
 - ✨ use data in your vector tiles or GeoJSON
-- ✨ style many different features in the same layer
+- ✨ style many different feature types in the same layer
 - ✨ fewer layers 🚀 more efficient rendering 
 
 ---
 
-# Property function looks like this 👇
+# A property function looks like this 👇
 
 ```js
 {
-  "circle-radius": {
+  "circle-color": {
+    "property": "temperature",
     "stops": [
 
-      // zoom is 5 -> circle radius will be 1px
-      [5, 1],
+      // "temperature" is 0   -> circle color will be blue
+      [0, 'blue'],
 
-      // zoom is 10 -> circle radius will be 2px
-      [10, 2]
+      // "temperature" is 100 -> circle color will be red
+      [100, 'red']
+
     ]
   }
 }
 ```
 ---
 
-# Zoom-and-property function looks like this 👇
+# A zoom-and-property function looks like this 👇
 
 ```js
 {
@@ -78,19 +76,36 @@ I'm Molly
 }
 ```
 ---
+# Map design
 
+- ● [Mapbox Streets](https://www.mapbox.com/maps/streets/)
 
+  - ⚬ 186 layers
+  - ⚬ 80 "road" + "bridges" layers w/ same source
+
+- ● With `line` property functions, layer count 📉
+
+---
+# Extrusions _aka_ 3D 🌆 and more! 
+
+- ● Data driven styling allows buildings to be rendered realistically
+- ● Mapbox Streets includes `height` and `min-height` properties
+
+---
+
+Data visualization 🎨📊👓
+
+- 🚀 we're adding more supported properties with every release
+- 💁 [mapbox-gl-style-spec](https://www.mapbox.com/mapbox-gl-style-spec/#layers-fill)
 
 ---
 
 # Contribute! 
 
+- All of this is open source. 
 - [mapbox-gl-js starter issues](https://github.com/mapbox/mapbox-gl-js/issues?q=is%3Aopen+is%3Aissue+label%3A%22starter+task%22)
-- [mapbox-gl-native issues](https://github.com/mapbox/mapbox-gl-native/issues)
+- [mapbox-gl-native issues starter issues](https://github.com/mapbox/mapbox-gl-native/issues?q=is%3Aopen+is%3Aissue+label%3Astarter-task)
 
 ---
 
-# Calaphon
-
-- [biggie](https://github.com/tmcw/biggie)
-
+# Thanks! 

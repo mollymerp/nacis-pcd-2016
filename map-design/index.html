@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta charset=utf-8 />
+    <title>Map Design DDS | Mapbox</title>
+    <link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
+    <script src='mapbox-gl.js'></script>
+    <link href='mapbox-gl.css' rel='stylesheet' />
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    #remove {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div id="remove" class="button">Remove layers</div>
+    <script>
+    //default token
+    mapboxgl.accessToken = 'pk.eyJ1IjoibW9sbHltZXJwIiwiYSI6ImNpazdqbGtiZTAxbGNocm0ybXJ3MnNzOHAifQ.5_kJrEENbBWtqTZEv7g1-w';
+
+    var map = new mapboxgl.Map({
+        style: './style.json',
+        container: 'map',
+        center: [-104.786, 38.827],
+        zoom: 11.5
+    });
+    map.on('load', function() {
+        map.addLayer({
+            id: 'roads',
+            type: 'line',
+            source:'composite',
+            "source-layer":'road',
+            paint: {
+                "line-width": {
+                    "property": "class",
+                    "base": 1.5,
+                    "stops": [
+                        [{zoom: 5, value: "motorway"}, 0.75],
+                        [{zoom: 5, value: "primary"}, 0.75],
+                        [{zoom: 5, value: "trunk"}, 0.75],
+
+                        [{zoom:8.5, value: "secondary"}, 0.5],
+                        [{zoom:8.5, value: "tertiary"}, 0.5],
+
+                        [{zoom:10, value: "secondary"}, 0.75],
+                        [{zoom:10, value: "tertiary"}, 0.75],
+
+                        [{zoom:18, value: "secondary"}, 26],
+                        [{zoom:18, value: "tertiary"}, 26],
+
+                        [{zoom: 18, value: "motorway"}, 32],
+                        [{zoom: 18, value: "primary"}, 32],
+                        [{zoom: 18, value: "trunk"}, 32]
+                    ]
+                },
+                "line-color": {
+                    "base": 1,
+                    "stops": [
+
+                        [{zoom:5, value:"secondary"}, "hsl(35, 32%, 91%)"],
+                        [{zoom:5, value:"tertiary"}, "hsl(35, 32%, 91%)"],
+                        [{zoom:5, value:"primary"}, "hsl(35, 32%, 91%)"],
+
+                        [{zoom: 6, value:"trunk"}, "hsl(0, 0%, 100%)"],
+                        [{zoom: 6.1, value:"trunk"}, "hsl(46, 80%, 60%)"],
+
+                        [{zoom:7, value:"primary"}, "hsl(0, 0%, 100%)"],
+
+                        [{zoom:8, value:"secondary"}, "hsl(0, 0%, 100%)"],
+                        [{zoom:8, value:"tertiary"}, "hsl(0, 0%, 100%)"],
+                        [{zoom:8, value:"motorway"}, "hsl(26, 87%, 62%)"],
+                        
+                        [{zoom:9, value: "motorway"}, "hsl(26, 100%, 68%)"],
+                        [{zoom: 9, value:"trunk"}, "hsl(46, 85%, 67%)"]
+                    ]
+                },
+                "line-gap-width": 0
+            },
+            "filter": [
+                "all", ["!in", "structure", "bridge", "tunnel"],
+                ["==", "class", "motorway"]
+            ]
+        },'place-city-md-n')
+
+    });
+
+    document.getElementById('remove').addEventListener('click', function() {
+        ['road-motorway', 'road-trunk', 'road-primary', 'road-secondary-tertiary'].forEach(function(l) {
+            map.removeLayer(l);
+        });
+    })
+    </script>
+</body>
+
+</html>

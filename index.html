@@ -33,7 +33,7 @@ h1, h2, h3 {
 
 em, a {
   font-style:normal;
-  color:#1B121C;
+  color:#FFC719;
 }
 
 ul {
@@ -122,14 +122,14 @@ window.onload = function() {
 };
 </script></head><body>
 <div><!-- 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+<link rel="stylesheet" href="lib/atom-highlight.css">
 <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Rubik:300,400" rel="stylesheet">
 <script src="lib/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 -->
 <p>Hi! </p>
 </div>
-<div><p>I&#39;m Molly</p>
+<div><p>I&#39;m Molly 🙋</p>
 </div>
 <div><ul>
 <li>🐧 @mollymerp</li>
@@ -147,26 +147,28 @@ window.onload = function() {
 <div><h1 id="data-driven-styling-_aka_-property-functions-_aka_-zoom-and-property-functions">Data driven styling <em>aka</em> property functions <em>aka</em> zoom-and-property functions</h1>
 <ul>
 <li>✨ use data in your vector tiles or GeoJSON</li>
-<li>✨ style many different features in the same layer</li>
-<li>✨ fewer layers 👉 more efficient rendering </li>
+<li>✨ style many different feature types in the same layer</li>
+<li>✨ fewer layers 🚀 more efficient rendering </li>
 </ul>
 </div>
-<div><h1 id="property-function-looks-like-this-">Property function looks like this 👇</h1>
+<div><h1 id="a-property-function-looks-like-this-">A property function looks like this 👇</h1>
 <pre><code class="lang-js">{
-  &quot;circle-radius&quot;: {
+  &quot;circle-color&quot;: {
+    &quot;property&quot;: &quot;temperature&quot;,
     &quot;stops&quot;: [
 
-      /* zoom is 5 -&gt; circle radius will be 1px */
-      [5, 1],
+      // &quot;temperature&quot; is 0   -&gt; circle color will be blue
+      [0, &#39;blue&#39;],
 
-      /* zoom is 10 -&gt; circle radius will be 2px */
-      [10, 2]
+      // &quot;temperature&quot; is 100 -&gt; circle color will be red
+      [100, &#39;red&#39;]
+
     ]
   }
 }
 </code></pre>
 </div>
-<div><h1 id="zoom-and-property-function-looks-like-this-">Zoom-and-property function looks like this 👇</h1>
+<div><h1 id="a-zoom-and-property-function-looks-like-this-">A zoom-and-property function looks like this 👇</h1>
 <pre><code class="lang-js">{
   &quot;circle-radius&quot;: {
     &quot;property&quot;: &quot;rating&quot;,
@@ -189,14 +191,34 @@ window.onload = function() {
 }
 </code></pre>
 </div>
-<div><h1 id="contribute-">Contribute!</h1>
+<div><h1 id="map-design">Map design</h1>
 <ul>
-<li><a href="https://github.com/mapbox/mapbox-gl-js/issues?q=is%3Aopen+is%3Aissue+label%3A%22starter+task%22">mapbox-gl-js starter issues</a></li>
-<li><a href="https://github.com/mapbox/mapbox-gl-native/issues">mapbox-gl-native issues</a></li>
+<li><p>● <a href="https://www.mapbox.com/maps/streets/">Mapbox Streets</a></p>
+<ul>
+<li>⚬ 186 layers</li>
+<li>⚬ 80 &quot;road&quot; + &quot;bridges&quot; layers w/ same source</li>
+</ul>
+</li>
+<li><p>● With <code>line</code> property functions, layer count 📉</p>
+</li>
 </ul>
 </div>
-<div><h1 id="calaphon">Calaphon</h1>
+<div><h1 id="extrusions-_aka_-3d-">Extrusions <em>aka</em> 3D 🌆</h1>
 <ul>
-<li><a href="https://github.com/tmcw/biggie">biggie</a></li>
+<li>● Data driven styling allows buildings to be rendered realistically</li>
+<li>● Mapbox Streets includes <code>height</code> and <code>min-height</code> properties</li>
+</ul>
+</div>
+<div><p>Data visualization 🎨📊👓</p>
+<ul>
+<li>🚀 we&#39;re adding more properties supported with every release</li>
+<li>💁 <a href="https://www.mapbox.com/mapbox-gl-style-spec/#layers-fill">mapbox-gl-style-spec</a></li>
+</ul>
+</div>
+<div><h1 id="contribute-">Contribute!</h1>
+<ul>
+<li>All of this is open source. </li>
+<li><a href="https://github.com/mapbox/mapbox-gl-js/issues?q=is%3Aopen+is%3Aissue+label%3A%22starter+task%22">mapbox-gl-js starter issues</a></li>
+<li><a href="https://github.com/mapbox/mapbox-gl-native/issues?q=is%3Aopen+is%3Aissue+label%3Astarter-task">mapbox-gl-native issues starter issues</a></li>
 </ul>
 </div>
